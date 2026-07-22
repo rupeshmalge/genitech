@@ -1,349 +1,926 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genitech Consulting | Professional Multi-Sector Recruitment</title>
-    <style>
-        /* Professional Color Palette & Typography */
-        :root {
-            --primary: #1e3a8a;      /* Deep Navy Blue */
-            --secondary: #0f172a;    /* Charcoal/Slate */
-            --accent: #2563eb;       /* Corporate Blue */
-            --light-bg: #f8fafc;     /* Soft Off-White */
-            --border-color: #cbd5e1; /* Light Slate Border */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genitech Consulting LLP — Recruitment Across Every Sector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            color: #334155; 
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
+  :root{
+    --ink:#101B2D;
+    --ink-soft:#2A3446;
+    --paper:#EFEDE4;
+    --paper-high:#F8F7F2;
+    --line:#CFC9B6;
+    --line-dark:#3A465A;
+    --brass:#B3852B;
+    --brass-bright:#D6A64A;
+    --teal:#2F5D50;
+    --teal-light:#4C7E6F;
+    --text:#181812;
+    --text-soft:#5B5A4E;
+    --white:#fff;
 
-        /* Top Menu Header Styling */
-        header { 
-    background: var(--secondary); 
-    color: #fff; 
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    height: 75px; /* Enforces a strict, professional header bar height */
-}
+    --display:'Newsreader', Georgia, serif;
+    --body:'Inter', -apple-system, sans-serif;
+    --mono:'JetBrains Mono', 'Courier New', monospace;
 
-.header-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    padding: 0 1rem;
-    height: 100%; /* Keeps tabs perfectly centered vertically */
-    position: relative; /* Crucial anchor for the logo positioning */
-}
+    --max:1220px;
+  }
 
-        .logo h2 {
-            margin: 0;
-            padding: 1.2rem 0;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
+  *{margin:0;padding:0;box-sizing:border-box;}
 
-        /* Navigation Menu Items Styled as Tabs */
-        nav {
-            display: flex;
-            height: 100%;
-        }
+  html{scroll-behavior:smooth;}
 
-       nav a { 
-    color: #94a3b8; 
-    text-decoration: none; 
-    padding: 0 1.2rem;
-    line-height: 75px; /* Matches header height to perfectly center text */
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    height: 75px;
-    box-sizing: border-box;
-}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
 
-        nav a:hover { 
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
-            border-bottom: 3px solid var(--accent);
-        }
+  body{
+    background:var(--paper);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), url('https://unsplash.com') no-repeat center center/cover; 
-            color: #fff; 
-            padding: 7rem 2rem; 
-            text-align: center; 
-        }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
 
-        .hero h1 { 
-    font-size: 2.8rem; 
-    margin-bottom: 1rem; 
-    font-weight: 800;
-    padding-top: 2rem; /* Adds breathing room below the hanging logo */
-}
+  :focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            color: #cbd5e1;
-        }
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
 
-        .btn { 
-            background: var(--accent); 
-            color: #fff; 
-            padding: 0.85rem 2rem; 
-            border-radius: 6px; 
-            text-decoration: none; 
-            font-weight: 600; 
-            display: inline-block; 
-            margin: 0.5rem; 
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:22px;height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
 
-        .btn:hover {
-            background: #1d4ed8;
-        }
+  h1,h2,h3{
+    font-family:var(--display);
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
 
-        /* Section Layouts */
-        .section { 
-            padding: 5rem 2rem; 
-            max-width: 1100px; 
-            margin: auto; 
-            text-align: center; 
-        }
+  /* ============ HEADER ============ */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(239,237,228,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 32px;
+    min-height:84px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:var(--ink);
+  }
+  .logo-badge{
+    background:#fff;
+    padding:8px 10px;
+    border-radius:10px;
+    line-height:0;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+    box-shadow:0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .logo-img{
+    height:54px;
+    width:auto;
+    max-width:76px;
+    object-fit:contain;
+    display:block;
+  }
+  .logo-text{
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:600;
+    line-height:1.2;
+    text-transform:lowercase;
+  }
+  .logo-text em{
+    font-style:normal;
+    display:block;
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:0.02em;
+    color:var(--text-soft);
+  }
+  .nav-links{
 
-        .section h2 {
-            font-size: 2.2rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
+    display:flex;
+    gap:36px;
+    font-size:14.5px;
+    font-weight:500;
+  }
+  .nav-links a{
+    position:relative;
+    padding:4px 0;
+    color:var(--ink-soft);
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:-2px;
+    width:0;height:1px;
+    background:var(--brass);
+    transition:width .25s;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    display:flex;
+    gap:12px;
+  }
+  .btn{
+    font-family:var(--body);
+    font-size:14px;
+    font-weight:600;
+    padding:11px 20px;
+    border-radius:2px;
+    border:1px solid var(--ink);
+    cursor:pointer;
+    transition:all .2s;
+    display:inline-block;
+  }
+  .btn-solid{
+    background:var(--ink);
+    color:var(--paper-high);
+  }
+  .btn-solid:hover{
+    background:var(--brass);
+    border-color:var(--brass);
+    color:var(--ink);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--line-dark);
+    border-color:var(--ink);
+  }
+  .btn-ghost:hover{
+    background:var(--ink);
+    color:var(--paper-high);
+  }
+  .menu-toggle{display:none;}
 
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
+  /* ============ HERO ============ */
+  .hero{
+    padding:96px 0 88px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:60px;
+    align-items:end;
+  }
+  .hero h1{
+    font-size:clamp(40px, 5.4vw, 74px);
+    line-height:1.03;
+    margin:22px 0 26px;
+    max-width:15ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--teal);
+  }
+  .hero-sub{
+    font-size:17.5px;
+    color:var(--text-soft);
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:44px;
+  }
+  .hero-note{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--text-soft);
+    letter-spacing:0.02em;
+  }
 
-        .section-subtitle {
-            color: #64748b;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
+  /* coordinate panel */
+  .coord-panel{
+    border:1px solid var(--line-dark);
+    background:var(--ink);
+    color:var(--paper);
+    padding:26px 26px 22px;
+    position:relative;
+  }
+  .coord-panel::before{
+    content:'FIG. 01 — COVERAGE';
+    position:absolute;
+    top:-11px;left:20px;
+    background:var(--paper);
+    color:var(--text-soft);
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    padding:0 8px;
+  }
+  .coord-title{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--brass-bright);
+    letter-spacing:0.08em;
+    margin-bottom:18px;
+    text-transform:uppercase;
+  }
+  .coord-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border-top:1px solid var(--line-dark);
+  }
+  .coord-item{
+    padding:12px 0;
+    border-bottom:1px solid var(--line-dark);
+    font-size:13px;
+  }
+  .coord-item:nth-child(odd){border-right:1px solid var(--line-dark);padding-right:14px;}
+  .coord-item:nth-child(even){padding-left:14px;}
+  .coord-item .c-code{
+    font-family:var(--mono);
+    color:var(--brass-bright);
+    font-size:11px;
+    display:block;
+    margin-bottom:2px;
+  }
 
-        /* Grid Layouts */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-            gap: 2rem; 
-            text-align: left; 
-        }
+  /* ============ STAT BAR ============ */
+  .statbar{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--paper-high);
+  }
+  .statbar .wrap{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+  }
+  .stat{
+    padding:34px 30px;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    font-family:var(--display);
+    font-size:38px;
+    color:var(--ink);
+    font-weight:500;
+  }
+  .stat .lbl{
+    font-family:var(--mono);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--text-soft);
+    margin-top:6px;
+  }
 
-        .card { 
-            background: var(--light-bg); 
-            padding: 2rem; 
-            border: 1px solid #e2e8f0; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
+  /* ============ SECTION SHARED ============ */
+  section{padding:110px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:56px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:26px;
+  }
+  .section-head h2{
+    font-size:clamp(30px,3.4vw,44px);
+    margin-top:14px;
+  }
+  .section-head p{
+    max-width:36ch;
+    color:var(--text-soft);
+    font-size:15.5px;
+    padding-bottom:4px;
+  }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+  /* ============ SECTORS ============ */
+  .sector-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .sector-card{
+    background:var(--paper-high);
+    padding:28px 24px;
+    transition:background .25s;
+    cursor:default;
+  }
+  .sector-card:hover{
+    background:var(--ink);
+  }
+  .sector-card:hover .s-code,
+  .sector-card:hover .s-name{color:var(--paper);}
+  .sector-card:hover .s-count{color:var(--brass-bright);}
+  .s-code{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--brass);
+    letter-spacing:0.08em;
+    transition:color .25s;
+  }
+  .s-name{
+    font-family:var(--display);
+    font-size:20px;
+    color:var(--ink);
+    margin:14px 0 18px;
+    line-height:1.15;
+    transition:color .25s;
+  }
+  .s-count{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-soft);
+    transition:color .25s;
+  }
 
-        .card h3 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
+  /* ============ PROCESS (tabs) ============ */
+  .process{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .process .eyebrow{color:var(--brass-bright);}
+  .process .eyebrow::before{background:var(--brass-bright);}
+  .process h2{color:var(--paper);}
+  .process .section-head{border-color:var(--line-dark);}
+  .process .section-head p{color:#B7BCC6;}
 
-        /* Interactive Contact Us Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            text-align: left;
-            margin-top: 2rem;
-        }
+  .tabs{
+    display:flex;
+    gap:0;
+    margin-bottom:44px;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .tab-btn{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    background:none;
+    border:none;
+    color:#8890A0;
+    padding:14px 0;
+    margin-right:40px;
+    cursor:pointer;
+    position:relative;
+  }
+  .tab-btn.active{color:var(--brass-bright);}
+  .tab-btn.active::after{
+    content:'';
+    position:absolute;
+    bottom:-1px;left:0;right:0;
+    height:2px;
+    background:var(--brass-bright);
+  }
 
-        .contact-info h3 {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
+  .steps{
+    display:none;
+    grid-template-columns:repeat(5,1fr);
+    gap:24px;
+  }
+  .steps.active{display:grid;}
+  .step{
+    border-top:1px solid var(--line-dark);
+    padding-top:18px;
+  }
+  .step .st-num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--brass-bright);
+    display:block;
+    margin-bottom:14px;
+  }
+  .step h3{
+    color:var(--paper);
+    font-size:19px;
+    margin-bottom:10px;
+    font-weight:500;
+  }
+  .step p{
+    color:#AEB4C0;
+    font-size:13.8px;
+    line-height:1.55;
+  }
 
-        .contact-form {
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
+  /* ============ ROLES LEDGER ============ */
+  .ledger{
+    width:100%;
+    border-collapse:collapse;
+  }
+  .ledger thead th{
+    text-align:left;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+    padding:0 0 14px;
+    border-bottom:1px solid var(--ink);
+    font-weight:500;
+  }
+  .ledger tbody td{
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+    vertical-align:middle;
+  }
+  .ledger tbody tr{transition:background .2s;}
+  .ledger tbody tr:hover{background:rgba(179,133,43,0.06);}
+  .role-title{
+    font-family:var(--display);
+    font-size:19px;
+    color:var(--ink);
+  }
+  .role-sub{
+    font-size:12.5px;
+    color:var(--text-soft);
+    margin-top:3px;
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.05em;
+    padding:4px 9px;
+    border:1px solid var(--teal);
+    color:var(--teal);
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .ledger td.arrow{
+    text-align:right;
+    font-family:var(--mono);
+    color:var(--brass);
+    font-size:18px;
+  }
+  .ledger-foot{
+    margin-top:30px;
+    text-align:center;
+  }
 
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
+  /* ============ TESTIMONIALS ============ */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .testi{
+    background:var(--paper-high);
+    padding:36px 30px;
+  }
+  .testi .quote{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:18.5px;
+    line-height:1.5;
+    color:var(--ink);
+    margin-bottom:22px;
+  }
+  .testi .who{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--text-soft);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .testi .who span{color:var(--brass);}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #475569;
-        }
+  /* ============ CTA BANNER ============ */
+  .cta-band{
+    background:var(--teal);
+    color:var(--paper-high);
+  }
+  .cta-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:rgba(255,255,255,0.18);
+    border:1px solid rgba(255,255,255,0.18);
+  }
+  .cta-col{
+    background:var(--teal);
+    padding:52px 44px;
+  }
+  .cta-col:first-child{background:var(--ink);}
+  .cta-col .eyebrow{color:var(--brass-bright);}
+  .cta-col .eyebrow::before{background:var(--brass-bright);}
+  .cta-col h3{
+    color:#fff;
+    font-size:30px;
+    margin:16px 0 14px;
+    max-width:16ch;
+  }
+  .cta-col p{
+    color:rgba(255,255,255,0.78);
+    font-size:14.5px;
+    max-width:38ch;
+    margin-bottom:26px;
+  }
+  .cta-col .btn-solid{
+    background:var(--brass);
+    border-color:var(--brass);
+    color:var(--ink);
+  }
+  .cta-col .btn-solid:hover{
+    background:#fff;
+    border-color:#fff;
+  }
 
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
-        }
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--ink);
+    color:#9AA0AC;
+    padding:64px 0 30px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:48px;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .foot-logo{
+    font-family:var(--display);
+    font-size:22px;
+    color:#fff;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .foot-grid p{font-size:13.5px;line-height:1.6;max-width:32ch;}
+  .foot-col h4{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#6C7280;
+    margin-bottom:16px;
+  }
+  .foot-col a{
+    display:block;
+    font-size:14px;
+    margin-bottom:11px;
+    color:#C3C8D1;
+    transition:color .2s;
+  }
+  .foot-col a:hover{color:var(--brass-bright);}
+  .foot-bottom{
+    display:flex;
+    justify-content:space-between;
+    padding-top:26px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:#5C6270;
+    flex-wrap:wrap;
+    gap:12px;
+  }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .coord-panel{margin-top:10px;}
+    .statbar .wrap{grid-template-columns:1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--line);}
+    .stat:last-child{border-bottom:none;}
+    .sector-grid{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .cta-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;row-gap:36px;}
+  }
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 0.85rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .submit-btn:hover {
-            background: var(--secondary);
-        }
-
-        footer { 
-            background: var(--secondary); 
-            color: #94a3b8; 
-            text-align: center; 
-            padding: 2.5rem 2rem; 
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Tweaks */
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; padding: 1rem; }
-            nav a { padding: 0.75rem 1rem; }
-            .contact-container { grid-template-columns: 1fr; gap: 2rem; }
-            .hero h1 { font-size: 2.2rem; }
-        }
-.logo {
-    position: absolute;
-    left: 1rem;
-    top: 5px; /* Aligns the top edge near the top of the bar */
-    z-index: 1001; /* Keeps it layered above everything else */
-}
-
-.logo img {
-    height: 250px; /* Your desired ideal layout size */
-    width: auto;             
-    display: block;
-    
-    /* Transparent screen filter rules */
-    mix-blend-mode: screen;
-    filter: invert(1);
-}
-    </style>
+  @media (max-width: 680px){
+    .nav-links{display:none;}
+    .wrap{padding:0 20px;}
+    section{padding:70px 0;}
+    .sector-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .section-head{flex-direction:column;align-items:flex-start;gap:14px;}
+    .ledger thead{display:none;}
+    .ledger tbody td{display:block;padding:6px 0;border-bottom:none;}
+    .ledger tbody tr{border-bottom:1px solid var(--line);padding:18px 0;display:block;}
+    .foot-grid{grid-template-columns:1fr;}
+    .nav-cta .btn-ghost{display:none;}
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
-           <div class="logo">
-    <a href="#home">
-        <img src="D:\Genitech Consulting\Logos\Logo_Geni.jpg" alt="Genitech Consulting Logo">
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo">
+      <span class="logo-badge"><img src="Logos/logo-icon.png" alt="Genitech Consulting" class="logo-img"></span>
+      <span class="logo-text">genitech<em>consulting</em></span>
     </a>
-</div>
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#sectors">Sectors</a>
-                <a href="#about">Why Us</a>
-                <a href="#contact">Contact Us</a>
-            </nav>
-        </div>
-    </header>
-
-    <div id="home">
-        <section class="hero">
-            <h1>Connecting Elite Talent Across All Sectors</h1>
-            <p>We build sustainable partnerships by aligning world-class professionals with industry-leading organizations globally.</p>
-            <a href="#contact" class="btn">Hire Top Talent</a>
-            <a href="#contact" class="btn" style="background:#0f172a; border: 1px solid #cbd5e1;">Explore Opportunities</a>
-        </section>
+    <div class="nav-links">
+      <a href="#sectors">Sectors</a>
+      <a href="#process">How it works</a>
+      <a href="#roles">Open roles</a>
+      <a href="#contact">Contact</a>
     </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Hire talent</a>
+      <a href="#roles" class="btn btn-solid">Find a role</a>
+    </div>
+  </nav>
+</header>
 
-    <section id="sectors" class="section">
-        <h2>Sectors We Serve</h2>
-        <div class="section-subtitle">Delivering comprehensive cross-industry human resource expertise.</div>
-        <div class="grid">
-            <div class="card">
-                <h3>Information Technology</h3>
-                <p>Specialized search for cloud architecture, cybersecurity infrastructure, software intelligence, and data analytics.</p>
-            </div>
-            <div class="card">
-                <h3>Healthcare & Life Sciences</h3>
-                <p>Connecting clinical research practitioners, bio-technical engineers, medical staff, and healthcare executives.</p>
-            </div>
-            <div class="card">
-                <h3>Engineering & Manufacturing</h3>
-                <p>Placing structural, automotive, mechanical engineers, and global operational supply chain managers.</p>
-            </div>
-            <div class="card">
-                <h3>Corporate Services & Finance</h3>
-                <p>Strategic recruitment for banking professionals, corporate lawyers, HR business partners, and financial officers.</p>
-            </div>
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:72px;">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Recruitment · Every sector, one desk</p>
+        <h1><em>One</em> team, every industry you hire in.</h1>
+        <p class="hero-sub">Genitech Consulting LLP is a recruitment partnership covering technology, healthcare, finance, construction, and eight other key sectors—built so growing companies get one elite, highly experienced team to call instead of juggling niche agencies, ensuring every single brief is handled directly by senior experts, never passed down to junior account handlers.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-solid">Brief us on a role</a>
+          <a href="#roles" class="btn btn-ghost">Browse open positions</a>
         </div>
-    </section>
+      </div>
 
-    <div style="background:var(--light-bg); width:100%;">
-        <section id="about" class="section">
-            <h2>Why Partners Choose Genitech</h2>
-            <div class="section-subtitle">Our commitment to excellence defines our global operational execution.</div>
-            <div class="grid">
-                <div class="card" style="background:#ffffff;">
-                    <h3>Tailored Search Strategy</h3>
-                    <p>We construct precision filters specific to your operational culture, reducing onboarding friction.</p>
-                </div>
-                <div class="card" style="background:#ffffff;">
-                    <h3>Deep Market Intelligence</h3>
-                    <p>Our consulting desks leverage extensive real-time industry analytics to track passive industry talent pipelines.</p>
-                </div>
+      <div class="coord-panel">
+        <div class="coord-title">Where we place people right now</div>
+        <div class="coord-list">
+          <div class="coord-item"><span class="c-code">TEC</span>Technology &amp; Engineering</div>
+          <div class="coord-item"><span class="c-code">HLT</span>Healthcare &amp; Life Sciences</div>
+          <div class="coord-item"><span class="c-code">FIN</span>Finance &amp; Prof. Services</div>
+          <div class="coord-item"><span class="c-code">CON</span>Construction &amp; Trades</div>
+          <div class="coord-item"><span class="c-code">LOG</span>Logistics &amp; Supply Chain</div>
+          <div class="coord-item"><span class="c-code">MFG</span>Manufacturing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+ 
+
+  <!-- SECTORS -->
+  <section id="sectors">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Coverage</p>
+          <h2>Every sector has its own market. We keep a desk in each one.</h2>
+        </div>
+        <p>Generalist agencies stretch one team across every brief. We staff dedicated consultants per sector, so the person on your call has actually recruited for your kind of role before.</p>
+      </div>
+
+      <div class="sector-grid">
+        <div class="sector-card"><span class="s-code">01 · TEC</span><div class="s-name">Technology &amp; Engineering</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">02 · HLT</span><div class="s-name">Healthcare &amp; Life Sciences</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">03 · FIN</span><div class="s-name">Finance &amp; Professional Services</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">04 · CON</span><div class="s-name">Construction &amp; Trades</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">05 · HOS</span><div class="s-name">Hospitality &amp; Retail</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">06 · LOG</span><div class="s-name">Logistics &amp; Supply Chain</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">07 · EDU</span><div class="s-name">Education</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">08 · MFG</span><div class="s-name">Manufacturing</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">09 · LEG</span><div class="s-name">Legal</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">10 · PUB</span><div class="s-name">Public Sector</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">11 · CRE</span><div class="s-name">Creative &amp; Media</div><div class="s-count">Now taking briefs</div></div>
+        <div class="sector-card"><span class="s-code">12 · ENR</span><div class="s-name">Energy &amp; Sustainability</div><div class="s-count">Now taking briefs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Process</p>
+          <h2>Built the same way, no matter the sector.</h2>
+        </div>
+        <p>Different markets, same discipline. Here's what happens after you get in touch — pick the side that applies to you.</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="employers">For employers</button>
+        <button class="tab-btn" data-tab="candidates">For candidates</button>
+      </div>
+
+      <div class="steps active" id="employers">
+        <div class="step"><span class="st-num">01</span><h3>Brief</h3><p>A sector-specialist consultant scopes the role, the team, and what's actually made past hires succeed or fail.</p></div>
+        <div class="step"><span class="st-num">02</span><h3>Search</h3><p>We work our sector network first — most shortlists include people not actively job-hunting.</p></div>
+        <div class="step"><span class="st-num">03</span><h3>Shortlist</h3><p>You receive 3–5 screened candidates within 6 working days on average, with notes on fit and motivation.</p></div>
+        <div class="step"><span class="st-num">04</span><h3>Interview</h3><p>We coordinate scheduling, gather feedback fast, and manage counter-offer conversations before they derail things.</p></div>
+        <div class="step"><span class="st-num">05</span><h3>Aftercare</h3><p>We check in at 30, 60, and 90 days. If it's not working out inside the guarantee period, we requalify at no extra fee.</p></div>
+      </div>
+
+      <div class="steps" id="candidates">
+        <div class="step"><span class="st-num">01</span><h3>Register</h3><p>Tell us your sector, your experience, and what would actually make you move.</p></div>
+        <div class="step"><span class="st-num">02</span><h3>Match</h3><p>Your consultant only puts you forward for roles that fit — not a volume list of loosely related openings.</p></div>
+        <div class="step"><span class="st-num">03</span><h3>Prepare</h3><p>You get a real briefing on the team, the interviewer, and what they're likely to probe on.</p></div>
+        <div class="step"><span class="st-num">04</span><h3>Offer</h3><p>We handle the back-and-forth on package and start date so you're not negotiating alone.</p></div>
+        <div class="step"><span class="st-num">05</span><h3>Settle in</h3><p>We follow up through your first three months to make sure the role matches what was promised.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section id="roles">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What we recruit for</p>
+          <h2>The kind of roles we're taking on first.</h2>
+        </div>
+        <p>We're building our live pipeline now — here's a sample of the roles and sectors we're set up to work on from day one.</p>
+      </div>
+
+      <table class="ledger">
+        <thead>
+          <tr><th>Role</th><th>Sector</th><th>Location</th><th>Type</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="role-title">Senior Site Manager</div><div class="role-sub">Commercial fit-out, 40-person crew</div></td>
+            <td><span class="tag">CON</span></td>
+            <td>Bengaluru, IN</td>
+            <td>Permanent</td>
+            <td class="arrow">→</td>
+          </tr>
+          <tr>
+            <td><div class="role-title">Clinical Data Manager</div><div class="role-sub">Phase II/III oncology trials</div></td>
+            <td><span class="tag">HLT</span></td>
+            <td>Remote (India)</td>
+            <td>Contract, 12mo</td>
+            <td class="arrow">→</td>
+          </tr>
+          <tr>
+            <td><div class="role-title">Platform Engineer</div><div class="role-sub">Kubernetes, fintech infra team</div></td>
+            <td><span class="tag">TEC</span></td>
+            <td>Pune, IN</td>
+            <td>Permanent</td>
+            <td class="arrow">→</td>
+          </tr>
+          <tr>
+            <td><div class="role-title">Regional Ops Manager</div><div class="role-sub">Multi-site logistics, 6 depots</div></td>
+            <td><span class="tag">LOG</span></td>
+            <td>Mumbai, IN</td>
+            <td>Permanent</td>
+            <td class="arrow">→</td>
+          </tr>
+          <tr>
+            <td><div class="role-title">Trainee Conveyancing Solicitor</div><div class="role-sub">Residential property team</div></td>
+            <td><span class="tag">LEG</span></td>
+            <td>Hyderabad, IN</td>
+            <td>Permanent</td>
+            <td class="arrow">→</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ledger-foot">
+        <a href="#contact" class="btn btn-ghost">Talk to us about a role</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Why a new agency</p>
+          <h2>What you get from being an early client.</h2>
+        </div>
+        <p>No legacy client list to prioritise over you, and no account handed off to a junior once the ink dries.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi">
+          <p class="quote">Every brief is handled directly by one of the founding partners — not passed down a chain to whoever's free.</p>
+          <p class="who">Founder-led <span>from first call to placement</span></p>
+        </div>
+        <div class="testi">
+          <p class="quote">Being newly launched means a smaller, hungrier candidate list right now — and full attention on getting your first searches right.</p>
+          <p class="who">Focused <span>on quality over volume</span></p>
+        </div>
+        <div class="testi">
+          <p class="quote">Built across various sectors from day one, so you're not our first attempt at recruiting for your industry.</p>
+          <p class="who">Specialist <span>by sector, not generalist</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-grid">
+      <div class="cta-col">
+        <p class="eyebrow">Hiring</p>
+        <h3>Tell us what you need to hire.</h3>
+        <p>Get matched with the consultant for your sector — most clients hear back within one working day.</p>
+        <a href="#contact" class="btn btn-solid">Start a brief</a>
+      </div>
+      <div class="cta-col">
+        <p class="eyebrow">Looking for work</p>
+        <h3>See where you'd actually fit.</h3>
+        <p>Register once, and only hear about roles that match your sector, level, and location.</p>
+        <a href="#roles" class="btn btn-solid">Browse open roles</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <span class="logo-badge"><img src="Logos/logo-icon.png" alt="Genitech Consulting" class="logo-img"></span>
+          Genitech Consulting
+        </div>
+        <p>A multi-sector recruitment LLP, built to cover various industries from day one. Founded 2026.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Office</h4>
+        <a href="#">Pune — HQ, by appointment</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#sectors">Sectors we cover</a>
+        <a href="#process">How we work</a>
+        <a href="#roles">Open roles</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:info@genitechconsulting.com">info@genitechconsulting.com</a>
+        <a href="tel:+911234567890">+91 12345 67890</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Genitech Consulting LLP.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.steps').forEach(s=>s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
